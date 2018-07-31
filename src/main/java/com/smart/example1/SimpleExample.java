@@ -26,7 +26,7 @@ public class SimpleExample {
         JobDetail jobDetail=JobBuilder.newJob(HelloJob.class).withIdentity("job1", "group1").build();
         Trigger trigger=TriggerBuilder.newTrigger().withIdentity("trigger1", "group1").startAt(runTime).build();
         scheduler.scheduleJob(jobDetail, trigger);
-        logger.info(trigger.getKey()+"will at"+runTime);
+        logger.info(trigger.getKey()+" will at "+runTime);
         scheduler.start();
         logger.info("------- Started Scheduler -----------------");
         logger.info("------- Waiting 65 seconds... -------------");
